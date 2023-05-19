@@ -223,7 +223,7 @@ namespace Ruffles.Channeling.Channels
                 int bits = (payload.Count - 2) * 8;
 
                 // Iterate ack bits
-                for (byte i = 0; i < bits; i++)
+                for (int i = 0; i < bits; i++)
                 {
                     // Get the ack for the current bit
                     bool isAcked = ((payload.Array[payload.Offset + 2 + (i / 8)] & ((byte)Math.Pow(2, (7 - (i % 8))))) >> (7 - (i % 8))) == 1;
